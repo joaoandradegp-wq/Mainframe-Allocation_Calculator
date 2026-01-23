@@ -4,8 +4,8 @@ object Form1: TForm1
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 
-    'ACM - Alocation Calculator for Mainframe 1.2 - By Jo'#227'o M'#225'rcio Bi' +
-    'calho/IBM'
+    'ACM - Allocation Calculator for Mainframe 1.2 - By Jo'#227'o M'#225'rcio B' +
+    'icalho/IBM'
   ClientHeight = 404
   ClientWidth = 555
   Color = clBtnFace
@@ -41,7 +41,6 @@ object Form1: TForm1
     Width = 555
     Height = 19
     Panels = <>
-    SimplePanel = False
   end
   object GroupBox4: TGroupBox
     Left = 8

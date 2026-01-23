@@ -9,7 +9,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.Title := 'ACM - Alocation Calculator for Mainframe 1.2';
+  Application.Title := 'ACM - Allocation Calculator for Mainframe 1.2';
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TAboutBox, AboutBox);
   Application.Run;
