@@ -10,6 +10,8 @@ Ferramenta para cálculo automático de alocação física em ambientes Mainfram
   <img src="https://img.shields.io/badge/Tipo-Mainframe%20Utility-lightgrey">
 </p>
 
+---
+
 <h2>📌 Sobre</h2>
 
 <p>
@@ -23,6 +25,8 @@ A ferramenta elimina a necessidade de cálculos manuais envolvendo Tracks, Cylin
 <p>
 Com poucos dados informados pelo usuário, o aplicativo calcula automaticamente toda a estrutura física necessária para criação e dimensionamento de datasets.
 </p>
+
+---
 
 <h2>⚙️ O que ele faz</h2>
 
@@ -193,11 +197,15 @@ O cálculo só pode ser executado quando os campos obrigatórios forem preenchid
   <li>WinSkinData</li>
 </ul>
 
+---
+
 <h2>📸 Preview</h2>
 
 <p align="center">
   <img width="500" height="392" alt="image" src="https://github.com/user-attachments/assets/737870ed-a36c-4491-8afc-fd99a616e4ac" />
 </p>
+
+---
 
 <h2>📥 Download</h2>
 
@@ -206,6 +214,8 @@ O cálculo só pode ser executado quando os campos obrigatórios forem preenchid
     <img src="https://img.shields.io/badge/Download-Allocation%20Calculator-blue?style=for-the-badge">
   </a>
 </p>
+
+---
 
 <p align="center">
 Ferramenta criada para eliminar cálculos manuais de allocation em ambientes Mainframe ☁️
