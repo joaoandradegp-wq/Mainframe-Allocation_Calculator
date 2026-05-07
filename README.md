@@ -196,7 +196,7 @@ O cálculo só pode ser executado quando os campos obrigatórios forem preenchid
 <h2>📸 Preview</h2>
 
 <p align="center">
-  <i>(adicione aqui um print da aplicação)</i>
+  <img width="500" height="392" alt="image" src="https://github.com/user-attachments/assets/737870ed-a36c-4491-8afc-fd99a616e4ac" />
 </p>
 
 <h2>📥 Download</h2>
