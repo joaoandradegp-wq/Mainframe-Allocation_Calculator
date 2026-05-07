@@ -45,6 +45,8 @@ Com poucos dados informados pelo usuário, o aplicativo calcula automaticamente 
 
 <p>Tudo isso acontece automaticamente em uma única execução.</p>
 
+---
+
 <h2>🧠 Regras de cálculo</h2>
 
 <p>A ferramenta utiliza regras clássicas de alocação física em Mainframe:</p>
@@ -62,6 +64,8 @@ Com poucos dados informados pelo usuário, o aplicativo calcula automaticamente 
   <li>Tamanho lógico do registro</li>
   <li>Block Size selecionado</li>
 </ul>
+
+---
 
 <h2>📦 Cálculo de Block Size</h2>
 
@@ -82,6 +86,8 @@ O cálculo utiliza truncamento matemático para encontrar o maior múltiplo vál
 Isso ajuda a maximizar aproveitamento físico do dataset e reduzir desperdício de espaço.
 </p>
 
+---
+
 <h2>📊 Conversões automáticas</h2>
 
 <p>O aplicativo converte automaticamente:</p>
@@ -96,6 +102,8 @@ Isso ajuda a maximizar aproveitamento físico do dataset e reduzir desperdício 
 <p>
 Todos os valores são exibidos formatados automaticamente na interface.
 </p>
+
+---
 
 <h2>📋 Geração automática de SPACE</h2>
 
@@ -119,6 +127,8 @@ SPACE=(TRK,(150,150),RLSE)
 SPACE=(CYL,(10,10),RLSE)
 </pre>
 
+---
+
 <h2>📊 Exemplo de processamento</h2>
 
 <p><b>Entrada:</b></p>
@@ -139,6 +149,8 @@ SPACE=(TRK,(625,1),RLSE)
 SPACE=(CYL,(42,1),RLSE)
 </pre>
 
+---
+
 <h2>🚀 Como usar</h2>
 
 <ol>
@@ -150,6 +162,8 @@ SPACE=(CYL,(42,1),RLSE)
   <li>Copie os parâmetros SPACE gerados</li>
 </ol>
 
+---
+
 <h2>🎯 O que isso resolve</h2>
 
 <ul>
@@ -160,6 +174,8 @@ SPACE=(CYL,(42,1),RLSE)
   <li>Melhora cálculo de Block Size</li>
   <li>Ajuda em capacity planning</li>
 </ul>
+
+---
 
 <h2>⚠️ Validações</h2>
 
@@ -176,6 +192,8 @@ SPACE=(CYL,(42,1),RLSE)
 O cálculo só pode ser executado quando os campos obrigatórios forem preenchidos corretamente.
 </p>
 
+---
+
 <h2>🖥️ Interface</h2>
 
 <ul>
@@ -187,6 +205,8 @@ O cálculo só pode ser executado quando os campos obrigatórios forem preenchid
   <li>Área de saída para JCL</li>
   <li>Status operacional</li>
 </ul>
+
+---
 
 <h2>🛠️ Tecnologias</h2>
 
@@ -207,16 +227,6 @@ O cálculo só pode ser executado quando os campos obrigatórios forem preenchid
 
 ---
 
-<h2>📥 Download</h2>
-
 <p align="center">
-  <a href="#">
-    <img src="https://img.shields.io/badge/Download-Allocation%20Calculator-blue?style=for-the-badge">
-  </a>
-</p>
-
----
-
-<p align="center">
-Ferramenta criada para eliminar cálculos manuais de allocation em ambientes Mainframe ☁️
+Ferramenta criada para eliminar cálculos manuais de allocation em ambientes Mainframe. ☁️
 </p>
