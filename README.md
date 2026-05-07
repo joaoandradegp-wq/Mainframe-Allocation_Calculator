@@ -1,313 +1,205 @@
 <h1 align="center">☁️ Allocation Calculator</h1>
 
 <p align="center">
-Ferramenta desenvolvida para automatizar cálculos de alocação utilizados em ambientes Mainframe, convertendo volumes de registros em parâmetros prontos para JCL, SPACE allocation e dimensionamento físico de datasets.
+Ferramenta para cálculo automático de alocação física em ambientes Mainframe.
 </p>
 
 <p align="center">
-O aplicativo elimina cálculos manuais envolvendo Tracks, Cylinders, Block Size e conversões de armazenamento, reduzindo erros operacionais e acelerando processos de criação de datasets em ambientes z/OS.
+  <img src="https://img.shields.io/badge/Status-Legado-yellow">
+  <img src="https://img.shields.io/badge/Linguagem-Delphi%207-blue">
+  <img src="https://img.shields.io/badge/Tipo-Mainframe%20Utility-lightgrey">
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Legacy-orange">
-  <img src="https://img.shields.io/badge/Platform-Windows-blue">
-  <img src="https://img.shields.io/badge/Language-Delphi%207-red">
-  <img src="https://img.shields.io/badge/Environment-Mainframe-lightgrey">
+<h2>📌 Sobre</h2>
+
+<p>
+O <b>Allocation Calculator</b> foi desenvolvido para automatizar cálculos de alocação utilizados em ambientes Mainframe.
 </p>
 
----
+<p>
+A ferramenta elimina a necessidade de cálculos manuais envolvendo Tracks, Cylinders, Bytes, Block Size e comandos SPACE utilizados em JCL.
+</p>
 
-## ✨ Funcionalidades
+<p>
+Com poucos dados informados pelo usuário, o aplicativo calcula automaticamente toda a estrutura física necessária para criação e dimensionamento de datasets.
+</p>
 
-<table style="border: none; border-collapse: collapse;">
+<h2>⚙️ O que ele faz</h2>
 
-<tr>
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### 📦 CÁLCULO DE ALOCAÇÃO
-
-O sistema calcula automaticamente:
-
-<ul>
-<li>Total de Bytes</li>
-<li>KBytes</li>
-<li>MBytes</li>
-<li>GBytes</li>
-<li>TBytes</li>
-<li>Quantidade de Tracks</li>
-<li>Quantidade de Cylinders</li>
-</ul>
-
-Todos os cálculos são realizados automaticamente a partir da quantidade de registros e tamanho lógico informado pelo usuário.
-
-<br>
-
-</td>
-
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### 🧠 GERAÇÃO AUTOMÁTICA DE SPACE
-
-O aplicativo gera automaticamente comandos prontos para utilização em JCL:
+<p>Durante o processamento, o aplicativo:</p>
 
 <ul>
-<li>SPACE=(TRK,...)</li>
-<li>SPACE=(CYL,...)</li>
-<li>RLSE automático</li>
+  <li>Calcula tamanho total em Bytes</li>
+  <li>Converte automaticamente para KB, MB, GB e TB</li>
+  <li>Calcula quantidade de Tracks</li>
+  <li>Calcula quantidade de Cylinders</li>
+  <li>Gera parâmetros SPACE prontos para JCL</li>
+  <li>Calcula alocação primária e secundária</li>
+  <li>Calcula Block Size otimizado</li>
+  <li>Valida entradas inválidas automaticamente</li>
 </ul>
 
-Também calcula valores secundários de alocação para expansão dinâmica de datasets.
+<p>Tudo isso acontece automaticamente em uma única execução.</p>
 
-<br>
+<h2>🧠 Regras de cálculo</h2>
 
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### ⚙️ CÁLCULO DE BLOCK SIZE
-
-O sistema possui cálculo automático de Block Size baseado em:
+<p>A ferramenta utiliza regras clássicas de alocação física em Mainframe:</p>
 
 <ul>
-<li>27990 bytes</li>
-<li>32760 bytes</li>
+  <li><b>1 Track:</b> 48.000 bytes</li>
+  <li><b>1 Cylinder:</b> 15 Tracks</li>
+  <li><b>1 Cylinder:</b> 720.000 bytes</li>
 </ul>
 
-O cálculo utiliza truncamento inteligente para encontrar o melhor múltiplo possível do tamanho lógico do registro.
-
-<br>
-
-Exemplo interno:
+<p>Os cálculos são realizados automaticamente utilizando:</p>
 
 <ul>
-<li>BLKSIZE otimizado para RECFM fixo</li>
-<li>Aproveitamento máximo do bloco físico</li>
-<li>Redução de desperdício de espaço</li>
+  <li>Total de registros</li>
+  <li>Tamanho lógico do registro</li>
+  <li>Block Size selecionado</li>
 </ul>
 
-</td>
+<h2>📦 Cálculo de Block Size</h2>
 
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### 📊 CONVERSÕES AUTOMÁTICAS
-
-A aplicação converte automaticamente:
+<p>
+O sistema possui cálculo automático de BLKSIZE baseado nos limites físicos mais utilizados em ambientes Mainframe:
+</p>
 
 <ul>
-<li>Bytes → KB</li>
-<li>KB → MB</li>
-<li>MB → GB</li>
-<li>GB → TB</li>
+  <li>27990 bytes</li>
+  <li>32760 bytes</li>
 </ul>
 
-Os valores são exibidos formatados para facilitar análises operacionais e validações de capacidade.
+<p>
+O cálculo utiliza truncamento matemático para encontrar o maior múltiplo válido do tamanho lógico do registro.
+</p>
 
-<br>
+<p>
+Isso ajuda a maximizar aproveitamento físico do dataset e reduzir desperdício de espaço.
+</p>
 
-</td>
-</tr>
+<h2>📊 Conversões automáticas</h2>
 
-<tr>
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### 🖥️ INTERFACE OPERACIONAL
-
-Interface desenvolvida em Delphi 7 com foco em produtividade operacional:
+<p>O aplicativo converte automaticamente:</p>
 
 <ul>
-<li>Cálculo via botão ou ENTER</li>
-<li>Bloqueio de caracteres inválidos</li>
-<li>Seleção rápida via CTRL+A</li>
-<li>Limpeza automática de sessão</li>
-<li>Geração instantânea dos parâmetros</li>
+  <li>Bytes → KB</li>
+  <li>KB → MB</li>
+  <li>MB → GB</li>
+  <li>GB → TB</li>
 </ul>
 
-<br>
+<p>
+Todos os valores são exibidos formatados automaticamente na interface.
+</p>
 
-</td>
+<h2>📋 Geração automática de SPACE</h2>
 
-<td width="50%" valign="top" style="border: none; padding: 15px;">
+<p>
+O sistema gera automaticamente comandos prontos para utilização em JCL:
+</p>
 
-### 🔒 VALIDAÇÕES AUTOMÁTICAS
-
-O sistema impede entradas inválidas automaticamente:
-
-<ul>
-<li>Bloqueio de caracteres especiais</li>
-<li>Bloqueio de letras</li>
-<li>Validação de campos obrigatórios</li>
-<li>Controle de execução incompleta</li>
-</ul>
-
-O botão de cálculo só é habilitado quando os parâmetros mínimos são informados corretamente.
-
-</td>
-</tr>
-
-</table>
-
----
-
-## 🧮 Regras de Negócio
-
-<table style="border: none; border-collapse: collapse;">
-
-<tr>
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### 📐 CÁLCULO BASE
-
-O sistema utiliza parâmetros físicos clássicos de Mainframe:
-
-<ul>
-<li>15 tracks por cylinder</li>
-<li>48.000 bytes por track</li>
-<li>720.000 bytes por cylinder</li>
-</ul>
-
-Fórmulas utilizadas:
-
-<ul>
-<li>Total Bytes = Quantidade × Tamanho Registro</li>
-<li>Tracks = Bytes / 48000</li>
-<li>Cylinders = Bytes / 720000</li>
-</ul>
-
-</td>
-
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### ☁️ SPACE PRIMARY E SECONDARY
-
-O aplicativo gera automaticamente:
-
-<ul>
-<li>Primary Allocation</li>
-<li>Secondary Allocation</li>
-<li>RLSE</li>
-</ul>
-
-Exemplo gerado:
+<p><b>Exemplo:</b></p>
 
 <pre>
 SPACE=(TRK,(150,1),RLSE)
 SPACE=(CYL,(10,1),RLSE)
 </pre>
 
-Também cria versões para expansão proporcional automática.
+<p>
+Também gera versões para expansão secundária automática:
+</p>
 
-</td>
-</tr>
+<pre>
+SPACE=(TRK,(150,150),RLSE)
+SPACE=(CYL,(10,10),RLSE)
+</pre>
 
-<tr>
-<td width="50%" valign="top" style="border: none; padding: 15px;">
+<h2>📊 Exemplo de processamento</h2>
 
-### 📦 BLOCK SIZE OTIMIZADO
+<p><b>Entrada:</b></p>
 
-O cálculo de BLKSIZE utiliza:
+<pre>
+Quantidade de registros: 100000
+Tamanho lógico: 300
+</pre>
 
-<ul>
-<li>Truncamento matemático</li>
-<li>Múltiplos válidos do LRECL</li>
-<li>Limites físicos de bloco</li>
-</ul>
+<p><b>Saída:</b></p>
 
-Modos disponíveis:
+<pre>
+Bytes: 30.000.000
+Tracks: 625
+Cylinders: 42
 
-<ul>
-<li>27990</li>
-<li>32760</li>
-</ul>
+SPACE=(TRK,(625,1),RLSE)
+SPACE=(CYL,(42,1),RLSE)
+</pre>
 
-O objetivo é maximizar utilização física do dataset sem ultrapassar limites do ambiente.
+<h2>🚀 Como usar</h2>
 
-</td>
+<ol>
+  <li>Informe a quantidade de registros</li>
+  <li>Informe o tamanho lógico do registro</li>
+  <li>Selecione o modo de Block Size</li>
+  <li>Clique em <b>Calculate</b></li>
+  <li>Veja os resultados automaticamente</li>
+  <li>Copie os parâmetros SPACE gerados</li>
+</ol>
 
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### ⚡ EXECUÇÃO RÁPIDA
-
-O cálculo pode ser executado:
-
-<ul>
-<li>Pelo botão Calculate</li>
-<li>Pressionando ENTER</li>
-</ul>
-
-O sistema automaticamente:
-
-<ul>
-<li>Atualiza todos os campos</li>
-<li>Gera comandos JCL</li>
-<li>Calcula expansão secundária</li>
-<li>Atualiza conversões de armazenamento</li>
-</ul>
-
-</td>
-</tr>
-
-</table>
-
----
-
-## 📋 Saídas Geradas
-
-<table style="border: none; border-collapse: collapse;">
-
-<tr>
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### 📄 OUTPUT OPERACIONAL
-
-O sistema gera automaticamente:
+<h2>🎯 O que isso resolve</h2>
 
 <ul>
-<li>Total de armazenamento</li>
-<li>Quantidade de Tracks</li>
-<li>Quantidade de Cylinders</li>
-<li>BLKSIZE ideal</li>
-<li>SPACE TRK</li>
-<li>SPACE CYL</li>
+  <li>Evita cálculos manuais de alocação</li>
+  <li>Reduz erros em parâmetros SPACE</li>
+  <li>Facilita dimensionamento de datasets</li>
+  <li>Agiliza criação de JCLs</li>
+  <li>Melhora cálculo de Block Size</li>
+  <li>Ajuda em capacity planning</li>
 </ul>
 
-</td>
+<h2>⚠️ Validações</h2>
 
-<td width="50%" valign="top" style="border: none; padding: 15px;">
-
-### 🧾 COMANDOS PRONTOS
-
-Os parâmetros gerados podem ser utilizados diretamente em:
+<p>O sistema possui validações automáticas para evitar erros:</p>
 
 <ul>
-<li>JCL</li>
-<li>IEFBR14</li>
-<li>IDCAMS</li>
-<li>ALLOCATE</li>
-<li>Procedures</li>
-<li>Rotinas Batch</li>
+  <li>Bloqueio de letras</li>
+  <li>Bloqueio de caracteres especiais</li>
+  <li>Validação de campos vazios</li>
+  <li>Controle de execução incompleta</li>
 </ul>
 
-</td>
-</tr>
+<p>
+O cálculo só pode ser executado quando os campos obrigatórios forem preenchidos corretamente.
+</p>
 
-</table>
-
----
-
-## 🖼️ Tecnologias Utilizadas
+<h2>🖥️ Interface</h2>
 
 <ul>
-<li>Delphi 7</li>
-<li>VCL Components</li>
-<li>Windows API</li>
-<li>WinSkinData</li>
+  <li>Entrada para quantidade de registros</li>
+  <li>Entrada para tamanho lógico</li>
+  <li>Seleção de Block Size</li>
+  <li>Resultado formatado automaticamente</li>
+  <li>Geração instantânea de comandos SPACE</li>
+  <li>Área de saída para JCL</li>
+  <li>Status operacional</li>
 </ul>
 
----
+<h2>🛠️ Tecnologias</h2>
 
-## 📥 Download
+<ul>
+  <li>Delphi 7</li>
+  <li>VCL (Visual Component Library)</li>
+  <li>Windows API</li>
+  <li>WinSkinData</li>
+</ul>
+
+<h2>📸 Preview</h2>
+
+<p align="center">
+  <i>(adicione aqui um print da aplicação)</i>
+</p>
+
+<h2>📥 Download</h2>
 
 <p align="center">
   <a href="#">
@@ -315,8 +207,6 @@ Os parâmetros gerados podem ser utilizados diretamente em:
   </a>
 </p>
 
----
-
 <p align="center">
-Desenvolvido para automatizar cálculos que normalmente eram feitos manualmente em ambientes Mainframe ☁️
+Ferramenta criada para eliminar cálculos manuais de allocation em ambientes Mainframe ☁️
 </p>
